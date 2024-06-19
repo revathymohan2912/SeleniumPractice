@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-18T07:45:21 IST" name="Suite" finished-at="2024-06-18T07:45:41 IST" duration-ms="20325">
+    <groups>
+    </groups>
+    <test started-at="2024-06-18T07:45:21 IST" name="Test" finished-at="2024-06-18T07:45:41 IST" duration-ms="20325">
+      <class name="TestCase.PracticeTestCases">
+        <test-method is-config="true" signature="initalization()[pri:0, instance:TestCase.PracticeTestCases@3270d194]" started-at="2024-06-18T07:45:21 IST" name="initalization" finished-at="2024-06-18T07:45:39 IST" duration-ms="18124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initalization -->
+        <test-method signature="testCase18(java.lang.String,java.lang.String)[pri:0, instance:TestCase.PracticeTestCases@3270d194]" started-at="2024-06-18T07:45:39 IST" name="testCase18" finished-at="2024-06-18T07:45:41 IST" duration-ms="2097" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase18 -->
+      </class> <!-- TestCase.PracticeTestCases -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
