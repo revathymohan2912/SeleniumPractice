@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -29,6 +30,11 @@ public class PracticeTestCases extends Base{
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 	}
+	@AfterMethod
+	public void closeBrowzer() {
+		driver.close();
+	}
+	
 @Test
 	public void testCase01() {
 		System.out.println("01: NAVIGATIONAL COMMANDS");
@@ -38,7 +44,7 @@ public class PracticeTestCases extends Base{
 		driver.navigate().back();
 		driver.navigate().forward();
 		driver.navigate().refresh();
-		driver.close();
+		//driver.close();
 	}
 @Test
 	public void testCase02() {
@@ -55,7 +61,6 @@ public class PracticeTestCases extends Base{
 		//driver.findElement(By.tagName("input"));							
 		driver.findElement(By.id("nav-search-submit-button")).click();
 
-		driver.close();
 	}
 @Test
 	public void testCase04() {
@@ -67,7 +72,6 @@ public class PracticeTestCases extends Base{
 		int productsize = products.size();
 		System.out.println("No of Products = "+productsize);
 		softassert.assertEquals(productsize, 24);
-		driver.close();
 	}
 
 @Test
@@ -85,7 +89,6 @@ public void testCase05() {
 	System.out.println(value3);
 	softassert.assertEquals(value3, "field-keywords");
 	//driver.findElement(By.id("twotabsearchtextbox")).clear();
-	driver.close();
 }
 @Test
 public void testCase06() {
@@ -99,8 +102,6 @@ public void testCase06() {
 	/*driver.findElement(By.xpath("//span[@class='a-button-text a-declarative']")).click();
 	driver.findElement(By.id("s-result-sort-select_2")).click();
 	*/
-	
-	driver.close();
 }
 @Test
 public void testCase07() {
@@ -109,7 +110,6 @@ public void testCase07() {
 	action.contextClick().build().perform();		//right clicking
 	action.doubleClick(driver.findElement(By.xpath("//a[text()='Home & Kitchen']"))).build().perform();		//double click
 	
-	driver.close();
 }
 @Test
 public void testCase08() {
@@ -120,7 +120,6 @@ public void testCase08() {
 	Actions action = new Actions(driver);
 	action.dragAndDrop(source, target).build().perform();
 	
-	driver.close();
 }
 @Test
 public void testCase09() {
@@ -130,7 +129,6 @@ public void testCase09() {
 	Actions action = new Actions(driver);
 	action.moveToElement(signInBox).build().perform();				//mouseOvering
 	
-	driver.close();
 }
 @Test
 public void testCase10() {
@@ -140,8 +138,7 @@ public void testCase10() {
 	driver.findElement(By.id("latestandexpectprice1000002000001")).click();	//radioButtonSelection
 	driver.findElement(By.id("latestandexpectprice2000003000001")).click();	//radioButtonSelection
 	driver.findElement(By.id("mobraminmb614401000000")).click();			//checkBox Selection
-	
-	driver.close();
+
 }
 @Test
 public void testCase11() throws InterruptedException {
@@ -167,7 +164,6 @@ public void testCase11() throws InterruptedException {
 		boolean buyNowButtonStatus = driver.findElement(By.id("nav-search-submit-button")).isEnabled();
 		System.out.println(buyNowButtonStatus);
 		
-		driver.close();
 }
 @Test
 public void testCase12() {
@@ -183,7 +179,6 @@ public void testCase12() {
 		
 	//driver.navigate().to("https://selenium.qabible.in/");
 	
-	driver.close();
 }
 
 //WINDOW HANDLING
@@ -219,7 +214,6 @@ public void testCase14() {
 	System.out.println(text);
 	driver.switchTo().defaultContent();
 	
-	driver.close();
 }
 @Test
 public void testCase15() {
@@ -321,7 +315,6 @@ public void testCase15() {
 	boolean compareValue = value1.equals(value2);
 	System.out.println(compareValue);
 	
-	driver.close();
 }
 //click a hidden element & scrolling
 @Test
@@ -334,8 +327,6 @@ public void testCase16() {
 	executor.executeScript("arguments[0].click();", element);
 	//page scrolling
 	executor.executeScript("window.scrollBy(0,1000)", " ");
-	
-	driver.close();
 }
 
 //DATA PROVIDER
@@ -346,7 +337,6 @@ public void testCase17(String value1, String value2) {
 	driver.findElement(By.id("value-b")).sendKeys(value2);
 	driver.findElement(By.id("button-two")).click();
 	
-	driver.close();
 }
 @DataProvider(name = "testData")
 public Object[][] testDataFeed(){
